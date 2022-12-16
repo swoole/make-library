@@ -20,7 +20,8 @@ if (null === $file) {
 require_once $file;
 
 if (empty($argv[1])) {
-    exit("Usage: {$_ENV['_']} {$argv[0]} [LibrarySrcDir]" . PHP_EOL);
+    $_ = $_ENV['_'] == $argv[0] ? $argv[0] : "{$_ENV['_']} {$argv[0]}";
+    exit("Usage: $_ [LibrarySrcDir]" . PHP_EOL);
 }
 
 try {

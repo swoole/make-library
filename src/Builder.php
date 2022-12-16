@@ -181,6 +181,8 @@ class Builder
 #ifndef SWOOLE_LIBRARY_H
 #define SWOOLE_LIBRARY_H
 
+#include "zend_exceptions.h"
+
 #if PHP_VERSION_ID < 80000
 typedef zval zend_source_string_t;
 #else
@@ -230,7 +232,7 @@ static inline zend_bool _eval(const char *code, const char *filename) {
 
 {$source_str}
 
-void php_{$this->symbolPrefix}_load_library()
+void php_{$this->symbolPrefix}_load_library(void)
 {
 {$eval_str}
 }
